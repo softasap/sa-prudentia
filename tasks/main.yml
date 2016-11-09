@@ -1,0 +1,6 @@
+---
+# tasks file for sa-prudentia
+  - include: tasks_python.yml
+    when: option_install_python
+
+  - include: tasks_prudentia.yml

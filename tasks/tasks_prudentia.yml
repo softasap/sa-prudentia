@@ -1,0 +1,19 @@
+---
+
+  - name: Prudentia | package dependencies
+    apt: pkg="{{item}}"
+    with_items:
+      - "software-properties-common"
+      - "python-dev"
+      - "apt-transport-https"
+      - "libffi-dev"
+      - "libssl-dev"
+    become: yes
+    tags:
+      -python
+
+  - name: Prudentia | package
+    shell: pip install -U prudentia
+    become: yes
+    tags:
+      -python
